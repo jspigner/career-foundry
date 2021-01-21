@@ -1,0 +1,12 @@
+In pgAdmin4, I computed SQL queries based on the following questions: 
+<br>
+# List names of the columns in the payment table
+   SELECT * FROM payment LIMIT 10;
+Results: payment_id, customer_id, staff_id, rental_id, amount, payment_date 
+<br> 
+# Analyze the rental duration distrubtion to find out how many days most films are rented for 
+    SELECT rental_duration AS "rented for (in days)", COUNT(*) AS "number of films"
+    FROM film
+    GROUP BY 1
+    ORDER BY 2
+Results: Highest number of films is 212. Rental duration is between 3-7 days. The most popular # of days to rent according to most films is 6.  
