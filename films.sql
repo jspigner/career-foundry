@@ -46,7 +46,7 @@ WHERE category_id = 19
 SELECT title, release_year, rental_rate
 FROM film 
 ORDER BY rental_rate DESC, title 
-[Rockbuster.csv](https://github.com/jspigner/career-foundry-rockbuster/blob/main/Rockbuster.csv)
+-- See Rockbuster.csv 
 
 -- Group the data 
 -- I grouped the number of films in rating and rental_rate groups
