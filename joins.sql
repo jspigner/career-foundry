@@ -70,8 +70,7 @@ WHERE city IN   ('Aurora',
 GROUP BY amount, first_name, last_name, country, city, payment_id 
 ORDER BY amount DESC
 LIMIT 5; 
--- Results: Therefore, the top 5 highest paying customers based on the top 10 cities are listed in Figure 9. 
--- Nicholas Barfield is the highest paying customer (2 full dollars ahead of the second highest paying customer). 
+-- Results: Nicholas Barfield is the highest paying customer (2 full dollars ahead of the second highest paying customer). 
 -- He lives in Belm, Brazil and is mentioned twice in the list which means he also paid the most in number of payments (2) and total amount paid (20.98). 
 
 -- Notes: Do note again that the results for the top 10 cities aren’t accurate because all cities are ranked equally with a count of 1 except for Aurora, United States. 
