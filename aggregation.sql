@@ -1,4 +1,4 @@
--- In returns.sql, I ran a query to return a list of films that meet certain criteria (film ratinhg is either PG or G). 
+-- In returns.sql, I ran a query to return a list of films that meet certain criteria (film rating is either PG or G). 
 SELECT film_id, title, description, rating
 FROM film 
 WHERE rating IN ('PG','G')
