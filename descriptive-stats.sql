@@ -12,7 +12,7 @@ SELECT  MIN(rental_duration), MAX(rental_duration), AVG(rental_duration),
         COUNT(replacement_cost) AS cost_replacement_cost_values,
         COUNT(*) AS count_rows 
 FROM film;
--- See descriptive-stats-film.csv 
+-- See descriptive-stats-film.numbers 
 -- AND
 SELECT  mode()WITHIN GROUP (ORDER BY rating) 
         AS modal_value 
@@ -38,4 +38,4 @@ SELECT  store_id,
 FROM customer 
 GROUP BY store_id, active
 ORDER BY store_id; 
--- See descriptive-stats-customer.csv 
+-- See descriptive-stats-customer.numbers
