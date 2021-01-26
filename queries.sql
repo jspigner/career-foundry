@@ -45,3 +45,62 @@ FROM film
 GROUP BY rating
 ORDER BY rating 
 -- 3 is the minimum and 7 is the maximum. 
+
+-- CHECK FOR DIRTY DATA 
+-- Find duplicate data: 
+SELECT  title, 
+        release_year, 
+        language_id,
+        rental_duration, 
+        COUNT(*)
+FROM film 
+GROUP BY  title, 
+          release_year, 
+          language_id, 
+          rental_duration 
+HAVING COUNT(*) >1; 
+-- There are no duplicate data. The SELECT and GROUP BY functions are mirrored by columns selected. 
+-- HAVING COUNT(*)>1 tells the system to find a record that's repeated more than once. As a result, there are none. 
+
+-- Find non-uniform data: 
+SELECT rating
+FROM film 
+GROUP BY rating 
+
+SELECT language_id 
+FROM film 
+GROUP BY language_id 
+
+SELECT rental_rate 
+FROM film 
+GROUP BY rental_rate 
+ORDER BY rental_rate 
+
+SELECT rental_duration 
+FROM film 
+GROUP BY rental_duration 
+ORDER BY rental_duration 
+-- All are quick queries to find non-uniform data because they contain tuples that contain enum values. Based on what I found: 
+-- Rating: G, PG, PG-13, NC-17, R 
+-- Language ID: 1 (all of the films in the database are in English) 
+-- Rental rate: 0.99, 2.99, and 4.99 
+-- Rental duration: between 3 and 7 days 
+
+-- Find missing data 
+SELECT language_id 
+FROM film 
+WHERE language_id IS NULL 
+
+SELECT rental_duration 
+FROM film 
+WHERE rental_duration IS NULL 
+
+SELECT rating 
+FROM film 
+WHERE rating IS NULL 
+
+SELECT rental_rate 
+FROM film 
+WHERE rental_rate IS NULL 
+-- I ran several queries to find missing data or null data in selected columns. 
+-- However, I do notice that the release_year column contains errors; All observations are set to '1999' in release_year. 
