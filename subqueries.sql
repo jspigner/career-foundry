@@ -3,7 +3,7 @@
 -- Find the average amount paid by the top 5 customers: 
 
 -- MAIN QUERY 
--- In order to do this, I use the main query I ran in joins.sql: 
+-- In order to do this, I use the main query I ran in joins.sql. 
 SELECT  A.payment_id, 
         B.customer_id,
         A.amount,
@@ -34,11 +34,11 @@ LIMIT 5;
 -- Then, I write an outer statment to calculate the average amount paid.
 SELECT AVG(amount)
 FROM payment; 
--- Results: The outer statement reutns 4.20 as the average amount paid. 
+-- Results: The outer statement returns 4.20 as the average amount paid. 
 
 -- SUBQUERY 
 -- Add the subquery to the outer statement. It will go in either the SELECT, WHERE, or FROM clause. 
--- When referring to the subwuery in the outer statement, make sure to use the subquery's alias, "total_amount_paid". 
+-- When referring to the subquery in the outer statement, make sure to use the subquery's alias, "total_amount_paid". 
 SELECT AVG(total_amount_paid) AS avg_amount_paid, first name 
 
 (SELECT  A.payment_id, 
@@ -70,4 +70,4 @@ LIMIT 10) AS average
 
 GROUP BY first_name 
 LIMIT 5; 
-Results: Clinton (8.99), Debra (9.49), Marian (7.99), Nicholas (10.49), and Tina (8.99). 
+-- Results: Clinton (8.99), Debra (9.49), Marian (7.99), Nicholas (10.49), and Tina (8.99). 
